@@ -2,7 +2,7 @@ import { NavLink } from "react-bootstrap";
 
 const MyTopBar = () => {
   return (
-    <div className="col-9  mainLinks d-none d-md-flex">
+    <div className="col-9  offset-2 mainLinks d-none d-md-flex" style={{ offset: "3" }}>
       <NavLink>TRENDING</NavLink>
       <NavLink>PODCAST</NavLink>
       <NavLink>MOODS AND GENRES</NavLink>

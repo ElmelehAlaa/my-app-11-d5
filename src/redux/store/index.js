@@ -3,11 +3,12 @@ import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 // import { encryptTransform } from "redux-persist-transform-encrypt";
 import queryReducer from "../reducers/queryReducer";
-// import favoritesReducer from "../reducers/favoritesReducer";
+import selectedReducer from "../reducers/selectedReducer";
 import artistReducer from "../reducers/artistReducer";
 const persistConfig = {
   key: "root",
   storage,
+  whitelist: ["selectedReducer"],
   // transforms: [
   //   encryptTransform({
   //     secretKey: "ABCDEF",
@@ -17,7 +18,7 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
   artist: artistReducer,
-  //   favorites: favoritesReducer,
+  selected: selectedReducer,
   query: queryReducer,
 });
 const persistedReducer = persistReducer(persistConfig, rootReducer);

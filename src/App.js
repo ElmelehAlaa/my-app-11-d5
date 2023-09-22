@@ -2,7 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import MySideBar from "./components/MySiderBar";
 import MyPlayer from "./components/MyPlayer";
-import MyTopBar from "./MyTopBar";
+import MyTopBar from "./components/MyTopBar";
 import { Container, Row } from "react-bootstrap";
 import MyMain from "./components/MyMain";
 import { BrowserRouter, Route, Routes } from "react-router-dom";

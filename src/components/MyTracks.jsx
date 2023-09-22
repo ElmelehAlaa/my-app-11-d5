@@ -27,7 +27,7 @@ const MyTracks = ({ artistFetched, singleAlbum }) => {
           <p>
             <Link to={`/album/${singleAlbum.id}`}>
               Album:
-              {singleAlbum.name}
+              {singleAlbum.title}
             </Link>
             <Link to={`/artist/${singleAlbum.artist.id}`}>Artist: {singleAlbum.artist.name}</Link>
           </p>
