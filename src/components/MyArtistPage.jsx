@@ -7,7 +7,7 @@ const MyArtistPage = () => {
   const params = useParams();
   const [artistClicked, setArtistClicked] = useState(null);
   const artistFetched = useSelector((state) => state.artist.content);
-  console.log(artistFetched);
+
   console.log(params);
   const getArtistClicked = async () => {
     try {
@@ -18,9 +18,9 @@ const MyArtistPage = () => {
         },
       });
       if (response.ok) {
-        const data = await response.json();
-        setArtistClicked(data);
-        console.log(data);
+        const artist = await response.json();
+        setArtistClicked(artist);
+        console.log(artist);
       } else {
         alert("Error fetching results");
       }
@@ -30,6 +30,7 @@ const MyArtistPage = () => {
   };
   useEffect(() => {
     getArtistClicked();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -65,7 +66,8 @@ const MyArtistPage = () => {
             </div>
             <div className="pt-5 mb-5">
               <div className="row" id="apiLoaded">
-                {artistFetched && <MyTracks artistFetched={artistFetched} />}
+                {artistFetched.data &&
+                  artistFetched.data.map((singleAlbum) => <MyTracks artistFetched={singleAlbum} />)}
               </div>
             </div>
           </div>

@@ -1,7 +1,6 @@
 import { useSelector } from "react-redux";
 
 import MyTracks from "./MyTracks";
-import { useEffect, useState } from "react";
 
 const MyMain = () => {
   //   const [randomRockArtist, setRandomRockArtist] = useState([]);
@@ -43,7 +42,7 @@ const MyMain = () => {
             <h2>Search Results</h2>
             <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 imgLinks py-3">
               {artistQuered.data &&
-                artistQuered.data.map((singleAlbum) => <MyTracks key={singleAlbum.id} singleAlbum={singleAlbum} />)}
+                artistQuered.data.map((singleAlbum) => <MyTracks key={singleAlbum.id} artistFetched={singleAlbum} />)}
             </div>
           </div>
         </div>

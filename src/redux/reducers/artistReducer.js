@@ -8,7 +8,6 @@ const artistReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_ARTIST:
       return {
-        ...state,
         content: action.payload,
       };
     default:
